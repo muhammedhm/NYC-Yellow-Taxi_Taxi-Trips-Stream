@@ -9,22 +9,7 @@ exposes full observability through Prometheus + Grafana.
 
 ## 1. Architecture at a glance
 
-```
- [Parquet file]                                        [ClickHouse]
-      |                                                   ^      ^
-      v                                                   |      |
- stream_producer.py --(JSON, 10-50 msg/s)--> Kafka topic      raw_trip_events
-   (confluent-kafka)      taxi-trips-stream        |         trip_window_agg
-      |                    (6 partitions,           |              ^
-      | /metrics           3 brokers, KRaft)        v              |
-      v                          |            stream_consumer.py --+
- [Prometheus] <-----------------+---------------(Faust, confluent-kafka
-      |          /metrics       |                 under the hood)
-      |                         v                       |
-      v                   [Kafka UI]                     | /metrics
- [Grafana]                (inspect topics,               v
-  dashboard                 partitions, lag)        [Prometheus]
-```
+<img src="./stream_arch.png" width="800" alt="Stream-architecture">
 
 Everything runs via a single `docker compose up -d` except the Python
 producer and consumer processes themselves, which run on the host (so you
