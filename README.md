@@ -1,4 +1,4 @@
-# NYC Taxi Real-Time Streaming Pipeline — Assignment 2
+# NYC Taxi Real-Time Streaming Pipeline
 
 A local, Docker-based real-time pipeline that simulates live taxi trip
 events, streams them through Kafka, processes them with a sliding-window
