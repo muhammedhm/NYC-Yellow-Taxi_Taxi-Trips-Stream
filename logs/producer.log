@@ -82,3 +82,66 @@
 {"timestamp": "2026-08-30T12:14:28.728546+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.43, "total_sent": 9355}
 {"timestamp": "2026-08-30T12:14:31.768372+00:00", "level": "INFO", "logger": "producer", "message": "producer_interrupted_by_user"}
 {"timestamp": "2026-08-30T12:14:32.335366+00:00", "level": "INFO", "logger": "producer", "message": "producer_stopped", "total_messages_sent": 9429}
+{"timestamp": "2026-08-30T17:34:00.735806+00:00", "level": "INFO", "logger": "producer", "message": "metrics_server_started", "port": 8001}
+{"timestamp": "2026-08-30T17:34:00.958866+00:00", "level": "INFO", "logger": "producer", "message": "producer_start", "rate_per_sec": 25, "files": ["D:\\Machine_learning\\MLOps\\project\\taxi-streaming\\data\\raw\\yellow_tripdata_2023-01.parquet"], "topic": "taxi-trips-stream"}
+{"timestamp": "2026-08-30T17:34:24.812394+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 0.04, "total_sent": 1}
+{"timestamp": "2026-08-30T17:34:29.877680+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.13, "total_sent": 122}
+{"timestamp": "2026-08-30T17:34:34.884130+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.58, "total_sent": 245}
+{"timestamp": "2026-08-30T17:34:39.915538+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.65, "total_sent": 369}
+{"timestamp": "2026-08-30T17:34:44.978070+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.48, "total_sent": 492}
+{"timestamp": "2026-08-30T17:34:50.011034+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.64, "total_sent": 616}
+{"timestamp": "2026-08-30T17:34:55.041151+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.65, "total_sent": 740}
+{"timestamp": "2026-08-30T17:35:00.072078+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.65, "total_sent": 864}
+{"timestamp": "2026-08-30T17:35:05.105979+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.64, "total_sent": 988}
+{"timestamp": "2026-08-30T17:35:10.139560+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.64, "total_sent": 1112}
+{"timestamp": "2026-08-30T17:35:15.178877+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.61, "total_sent": 1236}
+{"timestamp": "2026-08-30T17:35:20.185040+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.57, "total_sent": 1359}
+{"timestamp": "2026-08-30T17:35:25.213486+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.66, "total_sent": 1483}
+{"timestamp": "2026-08-30T17:35:30.242414+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.46, "total_sent": 1606}
+{"timestamp": "2026-08-30T17:35:35.243356+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.6, "total_sent": 1729}
+{"timestamp": "2026-08-30T17:35:40.247636+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.58, "total_sent": 1852}
+{"timestamp": "2026-08-30T17:35:45.282131+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.63, "total_sent": 1976}
+{"timestamp": "2026-08-30T17:35:50.312825+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.65, "total_sent": 2100}
+{"timestamp": "2026-08-30T17:35:55.343952+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.65, "total_sent": 2224}
+{"timestamp": "2026-08-30T17:36:00.365916+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.49, "total_sent": 2347}
+{"timestamp": "2026-08-30T17:36:05.367189+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.6, "total_sent": 2470}
+{"timestamp": "2026-08-30T17:36:10.372500+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.58, "total_sent": 2593}
+{"timestamp": "2026-08-30T17:36:15.407975+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.63, "total_sent": 2717}
+{"timestamp": "2026-08-30T17:36:20.408542+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.6, "total_sent": 2840}
+{"timestamp": "2026-08-30T17:36:25.448004+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.61, "total_sent": 2964}
+{"timestamp": "2026-08-30T17:36:30.476905+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.47, "total_sent": 3087}
+{"timestamp": "2026-08-30T17:36:35.481220+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.59, "total_sent": 3210}
+{"timestamp": "2026-08-30T17:36:40.504813+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.49, "total_sent": 3333}
+{"timestamp": "2026-08-30T17:36:45.529106+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.48, "total_sent": 3456}
+{"timestamp": "2026-08-30T17:36:50.567462+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.61, "total_sent": 3580}
+{"timestamp": "2026-08-30T17:36:55.573732+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.57, "total_sent": 3703}
+{"timestamp": "2026-08-30T17:37:00.583051+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.56, "total_sent": 3826}
+{"timestamp": "2026-08-30T17:37:01.031880+00:00", "level": "INFO", "logger": "producer", "message": "producer_interrupted_by_user"}
+{"timestamp": "2026-08-30T17:37:01.314612+00:00", "level": "INFO", "logger": "producer", "message": "producer_stopped", "total_messages_sent": 3836}
+{"timestamp": "2026-08-30T17:37:57.823100+00:00", "level": "INFO", "logger": "producer", "message": "metrics_server_started", "port": 8001}
+{"timestamp": "2026-08-30T17:37:58.013108+00:00", "level": "INFO", "logger": "producer", "message": "producer_start", "rate_per_sec": 25, "files": ["D:\\Machine_learning\\MLOps\\project\\taxi-streaming\\data\\raw\\yellow_tripdata_2023-01.parquet"], "topic": "taxi-trips-stream"}
+{"timestamp": "2026-08-30T17:38:13.583253+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 0.06, "total_sent": 1}
+{"timestamp": "2026-08-30T17:38:18.617581+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.64, "total_sent": 125}
+{"timestamp": "2026-08-30T17:38:23.637371+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.31, "total_sent": 247}
+{"timestamp": "2026-08-30T17:38:28.691432+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.14, "total_sent": 369}
+{"timestamp": "2026-08-30T17:38:33.719584+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.55, "total_sent": 492}
+{"timestamp": "2026-08-30T17:38:38.727269+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.36, "total_sent": 614}
+{"timestamp": "2026-08-30T17:38:43.733214+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 23.17, "total_sent": 730}
+{"timestamp": "2026-08-30T17:38:48.772910+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.61, "total_sent": 854}
+{"timestamp": "2026-08-30T17:38:53.808405+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.63, "total_sent": 978}
+{"timestamp": "2026-08-30T17:38:58.844857+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.62, "total_sent": 1102}
+{"timestamp": "2026-08-30T17:39:03.864632+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.51, "total_sent": 1225}
+{"timestamp": "2026-08-30T17:39:08.869469+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.58, "total_sent": 1348}
+{"timestamp": "2026-08-30T17:39:13.880340+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.55, "total_sent": 1471}
+{"timestamp": "2026-08-30T17:39:18.884273+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.58, "total_sent": 1594}
+{"timestamp": "2026-08-30T17:39:23.886252+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.59, "total_sent": 1717}
+{"timestamp": "2026-08-30T17:39:28.920499+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.63, "total_sent": 1841}
+{"timestamp": "2026-08-30T17:39:33.956462+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.63, "total_sent": 1965}
+{"timestamp": "2026-08-30T17:39:38.963510+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.57, "total_sent": 2088}
+{"timestamp": "2026-08-30T17:39:43.998045+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.63, "total_sent": 2212}
+{"timestamp": "2026-08-30T17:39:49.038264+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.61, "total_sent": 2336}
+{"timestamp": "2026-08-30T17:39:54.040732+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.39, "total_sent": 2458}
+{"timestamp": "2026-08-30T17:39:59.075318+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.63, "total_sent": 2582}
+{"timestamp": "2026-08-30T17:40:04.103944+00:00", "level": "INFO", "logger": "producer", "message": "throughput_sample", "target_rate": 25, "actual_rate": 24.66, "total_sent": 2706}
+{"timestamp": "2026-08-30T17:40:08.686840+00:00", "level": "INFO", "logger": "producer", "message": "producer_interrupted_by_user"}
+{"timestamp": "2026-08-30T17:40:09.295481+00:00", "level": "INFO", "logger": "producer", "message": "producer_stopped", "total_messages_sent": 2818}

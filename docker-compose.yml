@@ -106,6 +106,20 @@ services:
       - kafka-2
       - kafka-3
 
+  kafka-exporter:
+    image: danielqsj/kafka-exporter:latest
+    container_name: kafka_exporter
+    command:
+      - "--kafka.server=kafka-1:19092"
+      - "--kafka.server=kafka-2:19092"
+      - "--kafka.server=kafka-3:19092"
+    ports:
+      - "9308:9308"
+    depends_on:
+      - kafka-1
+      - kafka-2
+      - kafka-3
+
   clickhouse:
     image: clickhouse/clickhouse-server:24.3
     container_name: taxi_clickhouse

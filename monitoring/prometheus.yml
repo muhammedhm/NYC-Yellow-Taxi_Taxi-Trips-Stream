@@ -7,13 +7,21 @@ scrape_configs:
     static_configs:
       - targets: ["localhost:9090"]
 
-  # Task 4 will point this at the Faust streaming app's /metrics endpoint
+  # producer/stream_producer.py -- runs on the host, not in Docker, so
+  # Prometheus (which runs inside Docker) reaches it via the special
+  # host.docker.internal DNS name Docker provides for exactly this case.
+  - job_name: "taxi-stream-producer"
+    static_configs:
+      - targets: ["host.docker.internal:8001"]
+
+  # consumer/stream_consumer.py -- same host-networking note as above.
   - job_name: "taxi-stream-consumer"
     static_configs:
       - targets: ["host.docker.internal:8000"]
 
-  # Task 4 will add kafka-exporter (danielqsj/kafka-exporter) as a compose
-  # service and scrape it here for consumer-lag / broker health metrics:
-  # - job_name: "kafka"
-  #   static_configs:
-  #     - targets: ["kafka-exporter:9308"]
+  # Broker health + consumer lag, via danielqsj/kafka-exporter (added in
+  # docker-compose.yml). This is what answers "is my consumer keeping up
+  # with the producer" -- Task 4's core observability ask.
+  - job_name: "kafka"
+    static_configs:
+      - targets: ["kafka-exporter:9308"]

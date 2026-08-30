@@ -1,0 +1,108 @@
+{
+  "title": "NYC Taxi Streaming Pipeline",
+  "uid": "taxi-streaming-overview",
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "10s",
+  "time": { "from": "now-30m", "to": "now" },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Producer Throughput (events/sec)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        { "expr": "rate(producer_messages_sent_total[1m])", "legendFormat": "sent/sec" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Consumer Throughput (events/sec)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        { "expr": "rate(consumer_messages_consumed_total[1m])", "legendFormat": "consumed/sec" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Consumer Lag (per partition)",
+      "description": "Messages produced but not yet consumed. Sustained growth means the consumer can't keep up -- the key signal for Task 4's observability ask.",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        { "expr": "kafka_consumergroup_lag{topic=\"taxi-trips-stream\"}", "legendFormat": "partition {{partition}}" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "End-to-End Latency (p50 / p95 / p99)",
+      "description": "Time from producer_sent_at to consumer processing -- the whole pipeline's real-world lag.",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        { "expr": "histogram_quantile(0.50, rate(consumer_end_to_end_latency_seconds_bucket[1m]))", "legendFormat": "p50" },
+        { "expr": "histogram_quantile(0.95, rate(consumer_end_to_end_latency_seconds_bucket[1m]))", "legendFormat": "p95" },
+        { "expr": "histogram_quantile(0.99, rate(consumer_end_to_end_latency_seconds_bucket[1m]))", "legendFormat": "p99" }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Kafka Broker Count (up)",
+      "type": "stat",
+      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 16 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        { "expr": "kafka_brokers", "legendFormat": "brokers" }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Active Pickup Zones (last window)",
+      "type": "stat",
+      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 16 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        { "expr": "consumer_active_zones", "legendFormat": "zones" }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Late Events Rate",
+      "description": "Events whose pickup_datetime trailed the watermark by more than the late-threshold -- see windowing.py.",
+      "type": "timeseries",
+      "gridPos": { "h": 6, "w": 6, "x": 12, "y": 16 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        { "expr": "rate(consumer_late_events_total[1m])", "legendFormat": "late/sec" }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Raw Buffer Size (pending ClickHouse flush)",
+      "type": "timeseries",
+      "gridPos": { "h": 6, "w": 6, "x": 18, "y": 16 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        { "expr": "consumer_raw_buffer_size", "legendFormat": "buffered rows" }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Pipeline Errors (send + flush failures)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 22 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        { "expr": "rate(producer_send_errors_total[1m])", "legendFormat": "producer send errors/sec" },
+        { "expr": "rate(consumer_raw_flush_errors_total[1m])", "legendFormat": "raw flush errors/sec" },
+        { "expr": "rate(consumer_agg_flush_errors_total[1m])", "legendFormat": "aggregate flush errors/sec" }
+      ]
+    }
+  ]
+}
