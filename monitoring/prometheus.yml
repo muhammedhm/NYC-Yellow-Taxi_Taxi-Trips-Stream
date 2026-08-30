@@ -1,0 +1,19 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # Task 4 will point this at the Faust streaming app's /metrics endpoint
+  - job_name: "taxi-stream-consumer"
+    static_configs:
+      - targets: ["host.docker.internal:8000"]
+
+  # Task 4 will add kafka-exporter (danielqsj/kafka-exporter) as a compose
+  # service and scrape it here for consumer-lag / broker health metrics:
+  # - job_name: "kafka"
+  #   static_configs:
+  #     - targets: ["kafka-exporter:9308"]
