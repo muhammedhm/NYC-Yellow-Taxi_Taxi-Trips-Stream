@@ -151,10 +151,7 @@ testing against your data — not hypothetical edge cases.
 | # | Symptom | Root cause | Fix |
 |---|---|---|---|
 | 1 | `manifest for bitnami/kafka:3.7 not found` | Bitnami moved `kafka` behind a paid "Secure Images" subscription and pulled every free tag from Docker Hub | Switched `docker-compose.yml` to the official `apache/kafka:latest` image — different env var names (no `KAFKA_CFG_` prefix), 3-listener setup instead of 2, `kafka-topics.sh` at `/opt/kafka/bin/` instead of on `PATH` |
-| 2 | `ModuleNotFoundError: No module named 'duckdb'` in Streamlit (Assignment 1, same root cause applies here) | Streamlit was launched from Anaconda's base environment, not the project's `venv` | Launch via `venv\Scripts\python.exe -m streamlit run ...` to bypass PATH ambiguity entirely |
-| 3 | `The '<' operator is reserved for future use` | PowerShell doesn't support bash-style `<` stdin redirection | Use `Get-Content file.sql \| docker exec -i ... --multiquery` instead |
-| 4 | `IO Error: No files found that match the pattern ...` | Parquet file was never copied into `taxi-streaming/data/raw/` (separate folder from the Assignment 1 project) | Copy the file over, or pass `--file` pointing at its existing location |
-| 5 | `orjson.JSONDecodeError: unexpected character, expected a JSON value` in the Faust consumer | Some rows have `RatecodeID = NULL` → becomes `NaN` in JSON via Python's `json` module (which incorrectly allows the non-standard `NaN` literal); Faust's parser (`orjson`) correctly rejects it as invalid JSON | `COALESCE(RatecodeID, -1)` at the SQL source in the producer, plus a general NaN→null sanitizer in `make_payload()` as defense-in-depth for any other nullable column |
+| 2 | `orjson.JSONDecodeError: unexpected character, expected a JSON value` in the Faust consumer | Some rows have `RatecodeID = NULL` → becomes `NaN` in JSON via Python's `json` module (which incorrectly allows the non-standard `NaN` literal); Faust's parser (`orjson`) correctly rejects it as invalid JSON | `COALESCE(RatecodeID, -1)` at the SQL source in the producer, plus a general NaN→null sanitizer in `make_payload()` as defense-in-depth for any other nullable column |
 
 Verified after fix #5: 2000 real events replayed through the full
 parse → window → buffer pipeline (ClickHouse network calls mocked, since
